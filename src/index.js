@@ -1,4 +1,6 @@
 import axios from 'axios';
+import simpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix, { Notify } from 'notiflix';
 import simplelightbox from 'simplelightbox';
 import Handlebars from 'handlebars';
@@ -28,10 +30,13 @@ async function onSubmitBtnClick(event) {
         const q = event.target.searchQuery.value.trim();
         clearGallery();
         if (q !== '') {
-            console.log(q)
+            
             const { data } = await fetchImages(q);
                 refs.gallery.insertAdjacentHTML('beforeend', sample(data.hits));
-            
+            const gallery = new SimpleLightbox('.gallery a', {
+                scaleImageRatio: true,
+                captionDelay: 250
+            });
             
                 if (data.total > 0) {
                     Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`)
@@ -40,6 +45,7 @@ async function onSubmitBtnClick(event) {
                 } else {
                     Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.")
                 }
+            
             
         }}
             catch {
@@ -75,6 +81,10 @@ async function loadMore(event) {
     const q = refs.inputEl.value.trim();
         const { data } = await fetchImages(q);
         refs.gallery.insertAdjacentHTML('beforeend', sample(data.hits));
+        const gallery = new SimpleLightbox('.gallery a', {
+                scaleImageRatio: true,
+                captionDelay: 250
+            });
         if (data.total > 0 && data.hits.length >= 1 ) {
                 showLoadBtn();
                 Notiflix.Notify.success(`Success! ${data.hits.length} more images loaded!`)
