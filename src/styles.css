@@ -1,0 +1,123 @@
+.is-hidden {
+  display: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+  padding-top: 50px;
+  padding-bottom: 75px;
+}
+.container {
+  width: 1380px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+img {
+  object-fit: cover;
+  display: block;
+  height: 390px;
+  width: 100%;
+  margin: 0;
+  filter: greyscale(1);
+  transform: rotate(1turn) scale(1);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: #fff;
+}
+
+.gallery__item:hover :first-child,
+.gallery__item:focus :first-child {
+  filter: saturate(1.2);
+  transform: rotate(0deg) scale(1.1);
+  transition: filter 5000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 90px) / 3);
+  border: 2px solid purple;
+  border-radius: 3px;
+  background-color: hotpink;
+}
+
+.info {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.gallery__item {
+  display: block;
+  /* width: 550px; */
+  margin-right: 0;
+  border-bottom: solid 2px violet;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.btn {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 2px;
+  letter-spacing: 0.06em;
+  color: white;
+  background-color: plum;
+  cursor: pointer;
+  border-radius: 5px;
+
+  padding: 20px 23px;
+  border: 0px;
+  transform: scale(1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn:hover,
+.btn:focus {
+  background-color: hotpink;
+  transform: scale(1.2);
+}
+form {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  /* padding-left: auto;
+  padding-right: auto;
+} */
+}
+input {
+  margin-right: 7px;
+  width: 350px;
+  border-color: slateblue;
+  font-weight: 700;
+  border-radius: 3px;
+}
+input:hover,
+input:focus {
+  border-color: purple;
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 75px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+}
+body {
+  background-image: url('./heart.jpg');
+  background-size: contain;
+}

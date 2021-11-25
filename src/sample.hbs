@@ -1,0 +1,21 @@
+{{#each this}}
+<div class="card">
+    <a class="gallery__item" href="{{largeImageURL}}">
+        <img class="gallery__image" loading="lazy" src="{{webformatURL}}" alt={{tags}} />
+    </a>
+    <div class="info">
+        <p class="info-item"><b>Likes &#9829;</b>
+            {{likes}}
+        </p>
+        <p class="info-item"><b>Views &#x1f441;</b>
+            {{views}}
+        </p>
+        <p class="info-item"><b>Comments &#128172;</b>
+            {{comments}}
+        </p>
+        <p class="info-item"><b>Downloads &#11015;</b>
+            {{downloads}}
+        </p>
+    </div>
+</div>
+{{/each}}
